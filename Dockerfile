@@ -1,4 +1,4 @@
-FROM openjdk:8u171-jre
+FROM openjdk:8u181-jre
 MAINTAINER Alpha Hinex <AlphaHinex@gmail.com>
 
 RUN apt-get update \
@@ -23,5 +23,3 @@ ENV LANG zh_CN.UTF-8
 
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 RUN echo "Asia/Shanghai" > /etc/timezone
-
-EXPOSE 8080
