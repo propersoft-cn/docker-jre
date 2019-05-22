@@ -1,4 +1,4 @@
-FROM openjdk:8u181-jre
+FROM openjdk:8u212-jdk
 MAINTAINER Alpha Hinex <AlphaHinex@gmail.com>
 
 RUN apt-get update \
