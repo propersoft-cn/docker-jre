@@ -1,4 +1,4 @@
-FROM openjdk:8u181-jre
+FROM openjdk:11.0.3-jdk
 MAINTAINER Alpha Hinex <AlphaHinex@gmail.com>
 
 RUN apt-get update \
@@ -16,7 +16,7 @@ RUN curl -o /usr/lib/alpn-boot-8.1.12.v20180117.jar https://repo.gradle.org/grad
 # Install the Java JCE Policy
 # Based on https://github.com/commitd/docker-java-jce/blob/master/Dockerfile
 RUN curl -q -L -C - -b "oraclelicense=accept-securebackup-cookie" -o /tmp/jce_policy-8.zip -O http://download.oracle.com/otn-pub/java/jce/8/jce_policy-8.zip \
-    && unzip -oj -d /docker-java-home/jre/lib/security /tmp/jce_policy-8.zip \*/\*.jar \
+    && unzip -oj -d /docker-java-home/lib/security /tmp/jce_policy-8.zip \*/\*.jar \
     && rm /tmp/jce_policy-8.zip
 
 ENV LANG zh_CN.UTF-8
